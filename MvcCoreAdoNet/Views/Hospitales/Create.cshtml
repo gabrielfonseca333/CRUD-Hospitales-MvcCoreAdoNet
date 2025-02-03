@@ -1,0 +1,42 @@
+﻿<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">🏥 Crear un Hospital</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="idhospital" class="form-label">ID del Hospital</label>
+                    <input type="text" id="idhospital" name="idhospital" class="form-control" placeholder="Ingrese el ID" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese el nombre" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Ingrese el teléfono" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="camas" class="form-label">Número de Camas</label>
+                    <input type="number" id="camas" name="camas" class="form-control" placeholder="Ingrese el número de camas" required>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <a asp-controller="Hospitales" asp-action="Index" class="btn btn-secondary me-2">⬅ Cancelar</a>
+                    <button class="btn btn-success">💾 Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<h2 style="color: red">@ViewData["MENSAJE"]</h2>

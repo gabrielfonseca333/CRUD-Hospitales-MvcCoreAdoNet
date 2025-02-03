@@ -1,0 +1,23 @@
+﻿@model Hospital
+
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Detalles del Hospital</h3>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">🏥 @Model.Nombre</h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>ID:</strong> @Model.IdHospital</li>
+                <li class="list-group-item"><strong>Dirección:</strong> @Model.Direccion</li>
+                <li class="list-group-item"><strong>Teléfono:</strong> @Model.Telefono</li>
+                <li class="list-group-item"><strong>Camas disponibles:</strong> @Model.Camas</li>
+            </ul>
+        </div>
+        <div class="card-footer text-end">
+            <a class="btn btn-secondary" asp-controller="Hospitales" asp-action="Index">
+                ⬅ Volver a la lista
+            </a>
+        </div>
+    </div>
+</div>

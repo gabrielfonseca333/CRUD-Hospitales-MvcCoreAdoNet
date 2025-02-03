@@ -1,0 +1,44 @@
+﻿@model List<Hospital>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-primary">🏥 Hospitales SQL Server</h2>
+        <a asp-controller="Hospitales" asp-action="Create" class="btn btn-success">
+            ➕ Agregar Hospital
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover shadow-lg">
+            <thead class="table-primary">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var hospital in Model)
+                {
+                    <tr>
+                        <td>@hospital.Nombre</td>
+                        <td>@hospital.Direccion</td>
+                        <td>@hospital.Telefono</td>
+                        <td class="text-center">
+                            <a asp-controller="Hospitales" asp-action="Details" asp-route-id="@hospital.IdHospital" class="btn btn-info btn-sm">
+                                🔍 Ver Detalles
+                            </a>
+                            <a asp-controller="Hospitales" asp-action="Edit" asp-route-id="@hospital.IdHospital" class="btn btn-warning btn-sm">
+                                ✏️ Editar
+                            </a>
+                            <a asp-controller="Hospitales" asp-action="Delete" asp-route-id="@hospital.IdHospital" class="btn btn-danger btn-sm">
+                                ❌ Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
